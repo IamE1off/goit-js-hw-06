@@ -12,7 +12,7 @@ const customer = {
   },
   setDiscount(value) {
     if (typeof value === "number" && value >= 0 && value <= 1) {
-      this.discount = value;
+      this.discount = value; // check if the discount is a valid number
     } else {
       console.error("Discount should be a number between 0 and 1");
     }
@@ -23,6 +23,7 @@ const customer = {
   calculateOrderPrice(cost) {
     return cost - cost * this.discount;
   },
+  //check that cost is a valid number
   addOrder(cost, order) {
     if (typeof cost !== "number") {
       console.error("Cost should be a number");
